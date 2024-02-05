@@ -1,0 +1,8 @@
+# Intermediate build results and reports
+/**/build
+
+# Bitstreams
+/**/images
+
+# Ignore build-generated build.info files
+/**/build.info
