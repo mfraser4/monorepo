@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 library mf;
-use mf.disp_8_signed_int;
+use mf.SegmentDisplay8DigitUnsignedInt;
 
 entity PositiveIntegerCounterDisplay is
     Port ( CLK100MHZ : in STD_LOGIC;
@@ -15,12 +15,12 @@ end PositiveIntegerCounterDisplay;
 architecture Behavioral of PositiveIntegerCounterDisplay is
 
     signal counter : integer range 0 to 999999 := 0;
-    signal cur_val : integer range 0 to 9999999 := 0;
+    signal cur_val : integer range 0 to 99999999 := 0;
 
 begin
 
 display:
-    entity disp_8_signed_int
+    entity SegmentDisplay8DigitUnsignedInt
     port map (
         clk => CLK100MHZ,
         val => cur_val,
