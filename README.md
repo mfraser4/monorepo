@@ -13,3 +13,9 @@ to run the following setup script:
 ```bash
 git lfs install
 ```
+
+Then clone this repository, recursively including the Git submodules:
+
+```bash
+git clone --recursive https://github.com/mfraser4/monorepo.git
+```
