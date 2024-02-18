@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 library mf;
-use mf.segment_display.all;
+use mf.SegmentDisplayPkg.all;
 
 --!
 --! @brief Segment display driver for base-10 integers in the range of -999 to

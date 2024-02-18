@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 library mf;
-use mf.segment_display.all;
+use mf.SegmentDisplayPkg.all;
 
 --!
 --! @brief Module for displaying a base-10 unsigned integer on a 7-segment anode

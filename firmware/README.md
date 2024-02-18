@@ -89,6 +89,51 @@ NOTE: If your build target fails, it may still be possible to view your results
 within Vivado (e.g. timing constraints failure). The build does not have to
 succeed with an exit code `0` to be able to be opened within Vivado.
 
+## GHDL Syntax Checking
+
+The project uses GHDL to perform syntax checking like the `surf` library. To
+lint this project's source code files for both `common/` and `targets/`,
+run the following command from the `firmware/` directory:
+
+```bash
+make
+```
+
+## Documentation
+
+Doxygen documentation for HTML and LaTeX will be built with the following
+command:
+
+```bash
+make docs
+```
+
+### Setup
+
+Dependencies can be installed on Ubuntu systems running the following commands:
+
+```bash
+sudo apt-get install doxygen
+```
+
+### PDF Documentation
+
+A PDF of the LaTeX documentation will be generated with the following command:
+
+```bash
+make pdf
+```
+
+#### Setup
+
+Dependencies can be installed on Ubuntu systems running the following commands:
+
+```bash
+sudo apt-get install texlive-latex-base \
+  texlive-fonts-recommended \
+  texlive-fonts-extra
+```
+
 ## References
 
 - [slaclab/surf](https://github.com/slaclab/surf): Surf project and links to
