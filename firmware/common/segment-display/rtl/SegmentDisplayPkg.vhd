@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-package segment_display is
+package SegmentDisplayPkg is
 
     -- Active and inactive signals for the 7-segment display (active low)
     constant ACTIVE : std_logic := '0';
@@ -47,9 +47,9 @@ package segment_display is
         i_digit : Digit
         ) return std_logic_vector;
 
-end package segment_display;
+end package SegmentDisplayPkg;
 
-package body segment_display is
+package body SegmentDisplayPkg is
 
     function GetDigitFrom8Int (
         i_val : integer range 0 to 99999999;
@@ -90,4 +90,4 @@ package body segment_display is
     end;
 
 
-end package body segment_display;
+end package body SegmentDisplayPkg;
