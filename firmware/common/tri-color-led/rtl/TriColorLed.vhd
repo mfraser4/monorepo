@@ -6,6 +6,12 @@ use mf.TriColorLedPkg.all;
 use mf.TriColorLedRaw;
 use mf.PwmPkg.all;
 
+--!
+--! @brief      Tri-color LED module that maps the input color to RGB signals.
+--!
+--! @todo       Refactor RGB signals into a record type.
+--! @todo       Refactor RGB duty cycle signals into a record type.
+--!
 entity TriColorLed is
     generic (
         --! @brief Pass-through for @ref Pwm.COUNTS_PER_PERIOD. Defaults to
@@ -14,10 +20,20 @@ entity TriColorLed is
         COUNTS_PER_PERIOD : integer := 1000000
     );
     Port (
+        --! Input clock.
         i_clk : in std_logic;
+
+        --! Color to display on the LED
         i_color : in Color;
+
+        --! o_red Red pin of the LED.
         o_red : out std_logic;
+
+
+        --! Green pin of the LED.
         o_green : out std_logic;
+
+        --! Blue pin of the LED.
         o_blue : out std_logic
     );
 end TriColorLed;
