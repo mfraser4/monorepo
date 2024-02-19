@@ -66,7 +66,6 @@ MAIN:
                 cycles_per_duty <= COUNTS_PER_PERIOD / (101 - i_duty);
             end if;
         end if;
-
     end process;
 
 end Behavioral;

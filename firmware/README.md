@@ -66,7 +66,7 @@ Firstly, the `build/` directory must be created within this directory.
 mkdir build
 ```
 
-To build a target, `cd` into the target directory (`targets/<target>`, then run
+To build a target, `cd` into the target directory (`targets/<target>`), then run
 the following:
 
 ```bash
