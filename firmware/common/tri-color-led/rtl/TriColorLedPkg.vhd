@@ -1,6 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+--!
+--! @brief Tri-color LED package providing colors and color mappings to duty
+--!        cycles.
 package TriColorLedPkg is
 
     type Color is (NONE, RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE);
