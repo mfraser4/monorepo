@@ -56,7 +56,7 @@ architecture Behavioral of SegmentDisplayUint is
     -- Internal triggers and variables
     signal counter : natural range 0 to CYCLES_PER_MS := 0;
     signal cur_an : natural range 0 to (ANODES_LENGTH - 1) := 0;
-    signal anode_digits : array ((ANODES_LENGTH - 1) downto 0) of Digit := (others => 0);
+    signal anode_digits : DigitArray((ANODES_LENGTH-1) downto 0) := (others => 0);
 
 begin
 

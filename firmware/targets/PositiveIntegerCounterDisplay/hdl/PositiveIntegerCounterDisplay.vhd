@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 library mf;
-use mf.SegmentDisplay8DigitUnsignedInt;
+use mf.SegmentDisplayUint;
 
 library surf;
 use surf.RegisterVector;
@@ -28,7 +28,7 @@ begin
     rst <= not toBoolean(CPU_RESETN);
 
 display:
-    entity SegmentDisplay8DigitUnsignedInt
+    entity SegmentDisplayUint
     port map (
         clk => CLK100MHZ,
         rst => rst,

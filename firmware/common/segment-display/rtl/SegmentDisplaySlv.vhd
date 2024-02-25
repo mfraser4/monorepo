@@ -7,7 +7,7 @@ use mf.SegmentDisplayPkg.all;
 library surf;
 use surf.StdRtlPkg.all;
 
-entity SegmentDisplay8BitStdVector is
+entity SegmentDisplaySlv is
     generic (
         --! Default number of anodes for a segment display
         ANODES_LENGTH : positive := 8;
@@ -24,9 +24,9 @@ entity SegmentDisplay8BitStdVector is
         anodes : out slv ((ANODES_LENGTH - 1) downto 0);
         cathodes : out slv (7 downto 0)
     );
-end SegmentDisplay8BitStdVector;
+end SegmentDisplaySlv;
 
-architecture Behavioral of SegmentDisplay8BitStdVector is
+architecture Behavioral of SegmentDisplaySlv is
 
    --! Calculate clock period based on clock frequency
     constant CLK_PERIOD_NS : time := 1.0 sec / real(CLK_FREQUENCY_HZ);
@@ -65,7 +65,7 @@ COUNT_PER_CLOCK:
             elsif (counter >= CYCLES_PER_MS) then
                 -- Reset if we've reached the millisecond mark
                 counter <= 0;
-                cur_an <= (cur_an + 1) mod anodes'length;
+                cur_an <= (cur_an + 1) mod ANODES_LENGTH;
             else
                 -- Continually illuminate current anode
                 counter <= counter + 1;
