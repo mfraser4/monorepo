@@ -20,7 +20,7 @@ export VIVADO_VERSION = -1.0
 export OVERRIDE_SUBMODULE_LOCKS = 1
 
 # GHDL build flags
-GHDLFLAGS = --workdir=$(OUT_DIR) --ieee=synopsys -fexplicit -frelaxed-rules  --warn-no-library
+GHDLFLAGS = --workdir=$(OUT_DIR) --ieee=synopsys -fexplicit -frelaxed-rules --warn-no-library
 
 # Include the shared ruckus Makefile header
 include $(RUCKUS_DIR)/system_shared.mk
@@ -54,8 +54,8 @@ syntax: src
 	@echo "============================================================================="
 	@echo VHDL Syntax Checking:
 	@echo "============================================================================="
-	@ghdl -i $(GHDLFLAGS) --work=mf $(PROJ_DIR)/build/SRC_VHDL/mf/*
-	@ghdl -i $(GHDLFLAGS) --work=work $(PROJ_DIR)/build/SRC_VHDL/work/*
+	@ghdl -i $(GHDLFLAGS) --work=mf $(OUT_DIR)/SRC_VHDL/mf/*
+	@ghdl -i $(GHDLFLAGS) --work=work $(OUT_DIR)/SRC_VHDL/work/*
 	@echo "============================================================================="
 	@echo VHDL Syntax Checking Done.
 	@echo "============================================================================="

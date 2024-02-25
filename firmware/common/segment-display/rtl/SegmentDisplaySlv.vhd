@@ -1,24 +1,42 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+library mf;
+use mf.SegmentDisplayPkg.all;
+
+library surf;
+use surf.StdRtlPkg.all;
+
 entity SegmentDisplay8BitStdVector is
+    generic (
+        --! Default number of anodes for a segment display
+        ANODES_LENGTH : positive := 8;
+
+        --! Default clock frequency in Hz (e.g., 100 MHz)
+        CLK_FREQUENCY_HZ : positive := 100000000;
+
+        --! Default clock edge sensitivity (e.g., rising edge)
+        CLK_EDGE : sl := '1'
+    );
     Port (
-        clk : in std_logic;
-        val : in std_logic_vector (7 downto 0);
-        anodes : out std_logic_vector (3 downto 0);
-        cathodes : out std_logic_vector (7 downto 0)
+        clk : in sl;
+        val : in slv (7 downto 0);
+        anodes : out slv ((ANODES_LENGTH - 1) downto 0);
+        cathodes : out slv (7 downto 0)
     );
 end SegmentDisplay8BitStdVector;
 
 architecture Behavioral of SegmentDisplay8BitStdVector is
 
-    -- Cycles per millisecond with a 100MHz clock and triggering on the rising
-    -- edge (0 index start)
-    constant CYCLES_PER_MS : integer range 0 to 99999 := 99999;
+   --! Calculate clock period based on clock frequency
+    constant CLK_PERIOD_NS : time := 1.0 sec / real(CLK_FREQUENCY_HZ);
+
+    --! Cycles per millisecond based on clock period
+    constant CYCLES_PER_MS : integer := integer(1000.0 ns / CLK_PERIOD_NS);
 
     -- Internal triggers and variables
-    signal counter : integer range 0 to CYCLES_PER_MS := 0;
-    signal cur_an : integer range 0 to (anodes'length - 1) := 0;
+    signal counter : natural range 0 to CYCLES_PER_MS := 0;
+    signal cur_an : natural range 0 to (ANODES_LENGTH - 1) := 0;
     signal anode_val : Digit := 0;
 
 begin
