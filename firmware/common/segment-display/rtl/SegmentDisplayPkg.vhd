@@ -14,7 +14,7 @@ package SegmentDisplayPkg is
     --! Inactive signal for the 7-segment display (active low)
     constant INACTIVE : sl := not ACTIVE;
 
-    -- Numeric values as cathode signals                  PGFEDCBA
+    -- Numeric values as cathode signals     PGFEDCBA
 
     --! Cathode configuration for displaying nothing
     constant CA_OFF   : slv (7 downto 0) := "11111111";
@@ -57,6 +57,7 @@ package SegmentDisplayPkg is
 
     --! Convenience type for @c [0-9].
     subtype Digit is natural range 0 to 9;
+    type DigitArray is array (natural range <>) of Digit;
 
     --!
     --! @brief Extracts the integer from the ith position of @c i_val.
@@ -65,7 +66,7 @@ package SegmentDisplayPkg is
     --! @returns The ith digit of @c i_val.
     function ExtractDigit (
         i_val : natural;
-        i_pos : natural
+        i_pos : natural range 0 to 10
         ) return Digit;
 
     --!
