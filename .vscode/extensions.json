@@ -1,0 +1,19 @@
+{
+    "recommendations": [
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-docker",
+        "quantum.qsharp-lang-vscode",
+        "ms-python.black-formatter",
+        "erlang-ls.erlang-ls",
+        "dbaeumer.vscode-eslint",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "streetsidesoftware.code-spell-checker",
+        "james-yu.latex-workshop",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools-extension-pack",
+        "jebbs.plantuml"
+    ]
+}
