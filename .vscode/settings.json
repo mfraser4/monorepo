@@ -1,0 +1,15 @@
+{
+    "editor.rulers": [
+        80
+    ],
+    "cSpell.customDictionaries": {
+    "project-words": {
+        "name": "project-words",
+        "path": "${workspaceRoot}/project-words.txt",
+        "description": "Words used in this project",
+        "addWords": true
+        },
+        "custom": true // Enable the `custom` dictionary
+    },
+    "files.trimTrailingWhitespace": true
+}

@@ -1,5 +1,18 @@
 # Firmware
 
+- [Firmware](#firmware)
+  - [Overview](#overview)
+  - [Directory Structuring](#directory-structuring)
+  - [Adding New Targets](#adding-new-targets)
+    - [Makefile](#makefile)
+    - [Top Module](#top-module)
+    - [Ruckus TCL Script](#ruckus-tcl-script)
+  - [Building a Target](#building-a-target)
+  - [GHDL Syntax Checking](#ghdl-syntax-checking)
+  - [Documentation](#documentation)
+    - [PDF Documentation](#pdf-documentation)
+  - [References](#references)
+
 ## Overview
 
 This directory contains FPGA projects and is structured after Stanford's
@@ -49,7 +62,7 @@ IMPORTANT: The steps within "Top Module" should be completed prior to this step.
 Within `targets/<target>/ruckus.tcl`, make sure the `top` property is set with
 the following convention:
 
-```
+```tcl
 set_property top {<target>} [get_filesets sources_1]
 ```
 
@@ -108,30 +121,12 @@ command:
 make docs
 ```
 
-### Setup
-
-Dependencies can be installed on Ubuntu systems running the following commands:
-
-```bash
-sudo apt-get install doxygen
-```
-
 ### PDF Documentation
 
 A PDF of the LaTeX documentation will be generated with the following command:
 
 ```bash
 make pdf
-```
-
-#### Setup
-
-Dependencies can be installed on Ubuntu systems running the following commands:
-
-```bash
-sudo apt-get install texlive-latex-base \
-  texlive-fonts-recommended \
-  texlive-fonts-extra
 ```
 
 ## References
